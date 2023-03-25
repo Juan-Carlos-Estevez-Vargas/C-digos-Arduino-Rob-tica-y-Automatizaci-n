@@ -4,7 +4,7 @@
 
 #include <NewPing.h>
 
-#define ledPin 9 
+//#define ledPin 9 
 #define TRIGGER_PIN  7  
 #define ECHO_PIN     8  
 #define MAX_DISTANCE 200 
@@ -15,11 +15,6 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(ledPin, HIGH);  
-  delay(2000);                     
-  digitalWrite(ledPin, LOW);
-  delay(2000);                     
-  Serial.print("Ultrasonido: ");
-  Serial.print(sonar.ping_cm()); 
-  Serial.println("cm");
+  delayMicroseconds(315);        
+  Serial.print(sonar.ping_cm());
 }
