@@ -1,0 +1,169 @@
+[
+    {
+        "id": "0d9d0a2b894c6617",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8470e0d31b8dbb2f",
+        "type": "serial in",
+        "z": "0d9d0a2b894c6617",
+        "name": "Ultrasonido",
+        "serial": "945f6e98fe1876c5",
+        "x": 410,
+        "y": 340,
+        "wires": [
+            [
+                "82e633723f8198ee"
+            ]
+        ]
+    },
+    {
+        "id": "ee8d145e44cd8622",
+        "type": "debug",
+        "z": "0d9d0a2b894c6617",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "82e633723f8198ee",
+        "type": "json",
+        "z": "0d9d0a2b894c6617",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 630,
+        "y": 340,
+        "wires": [
+            [
+                "088895b42c7540c9"
+            ]
+        ]
+    },
+    {
+        "id": "088895b42c7540c9",
+        "type": "function",
+        "z": "0d9d0a2b894c6617",
+        "name": "function 1",
+        "func": "var newmsg = {};\nnewmsg.payload = msg.payload ;\nvar s1 = {};\nvar s2 = {};\nvar mensaje = {};\n\ns1.payload = msg.payload.IR1;\ns2.payload = msg.payload.IR2;\nmensaje.payload = msg.payload.Materia;\n\nreturn [s1,s2,mensaje]",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 340,
+        "wires": [
+            [
+                "c6e44ea802a3e37f"
+            ],
+            [
+                "5fb65ef5ce6344d9"
+            ],
+            [
+                "d6d0e1dfc905c580"
+            ]
+        ]
+    },
+    {
+        "id": "ad176ad75a96c732",
+        "type": "debug",
+        "z": "0d9d0a2b894c6617",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c6e44ea802a3e37f",
+        "type": "debug",
+        "z": "0d9d0a2b894c6617",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "5fb65ef5ce6344d9",
+        "type": "debug",
+        "z": "0d9d0a2b894c6617",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "d6d0e1dfc905c580",
+        "type": "debug",
+        "z": "0d9d0a2b894c6617",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "945f6e98fe1876c5",
+        "type": "serial-port",
+        "serialport": "COM18",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "}",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    }
+]
