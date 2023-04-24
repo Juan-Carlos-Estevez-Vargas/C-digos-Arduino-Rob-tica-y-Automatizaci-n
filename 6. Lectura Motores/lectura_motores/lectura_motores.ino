@@ -5,45 +5,45 @@
 #include <AFMotor.h>
 
 // Definiendo los motores
-AF_DCMotor motor1(1);
-AF_DCMotor motor2(2);
+AF_DCMotor motor3(3);
+AF_DCMotor motor4(4);
 
 void setup() {
   Serial.begin(9600); // set up Serial library at 9600 bps
   
   // Asignación de velocidad a motores
-  motor1.setSpeed(200);
-  motor2.setSpeed(75);
+  motor3.setSpeed(200);
+  motor4.setSpeed(200);
  
   // Inicialización de los motores a un estado quieto.
-  motor1.run(RELEASE);
-  motor2.run(RELEASE);
+  motor3.run(RELEASE);
+  motor4.run(RELEASE);
 }
 
 void loop() {
-  atras();
+  girarIzquierda();
 }
 
 // Dirige los motores hacia adelante
 void adelante() {
-  motor1.run(FORWARD);
-  motor2.run(FORWARD);  
+  motor3.run(FORWARD);
+  motor4.run(FORWARD);  
 }
 
 // Dirige los motores hacia atras
 void atras() {
-  motor1.run(BACKWARD);
-  motor2.run(BACKWARD);  
+  motor3.run(BACKWARD);
+  motor4.run(BACKWARD);  
 }
 
 // Dirige los motores hacia un giro derecho
 void girarDerecha() {
-  motor1.run(FORWARD);
-  motor2.run(BACKWARD);  
+  motor3.run(FORWARD);
+  motor4.run(BACKWARD);  
 }
 
 // Dirige los motores hacia un giro izquierdo
 void girarIzquierda() {
-  motor1.run(BACKWARD);
-  motor2.run(FORWARD);  
+  motor3.run(BACKWARD);
+  motor4.run(FORWARD);  
 }
